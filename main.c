@@ -10,7 +10,7 @@
 
 
 int main (){
-    srand(time(NULL)); //Outputs a unix timestamp containing the current time. Used for randomizing.
+    srand(time(0)); //Outputs a unix timestamp containing the current time. Used for randomizing.
     //The first thing is to check that MIN_LENGTH < MAX_LENGTH and MIN_LENGTH > 0
     if (MIN_LENGTH > MAX_LENGTH || MIN_LENGTH < 1) {
         printf("There is at least a one problem with the given values of MIN_LENGTH or MAX_LENGTH, please check them.\n");
