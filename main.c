@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <time.h>
 
 //Defining the mininum and maximum amount of password generated:
 #define MIN_LENGTH 12
@@ -9,7 +10,7 @@
 
 
 int main (){
-
+    srand(time(NULL)); //Outputs a unix timestamp containing the current time. Used for randomizing.
     //The first thing is to check that MIN_LENGTH < MAX_LENGTH and MIN_LENGTH > 0
     if (MIN_LENGTH > MAX_LENGTH || MIN_LENGTH < 1) {
         printf("There is at least a one problem with the given values of MIN_LENGTH or MAX_LENGTH, please check them.\n");
@@ -25,7 +26,7 @@ int main (){
         printf("There is a problem with the given value.\n");
         return 1;
     }
-    printf("Your password is");
+    printf("Your password is: ");
     for (int i=0; i < amount; i++){
         int index = rand() % strlen(letters);
         printf("%c",letters[index]);
